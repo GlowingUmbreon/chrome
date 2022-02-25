@@ -1,44 +1,24 @@
 :root {
+  /* This makes the background transparent (https://reddit.com/s7gk70) */
   background: url('data:image/gif;base64,R0lGODlhAQABAAD8/ywAAAAAAQABAAAIBAABBAQAOwo=') !important;
-  /* ^ this is the real black magic */
 
-  /* and the rest is css fuckery to make sure fully transparent bg always gets covered with another bg */
-  margin: 0 !important;
-  padding: 0 !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  overflow: auto !important;
-  position: relative !important;
+  /* Remove scrollbar */
+  scrollbar-width: none !important;
 }
 
-html:before, html:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-:root>* {
-  margin: 0 !important;
-  padding: 0 !important;
-  height: max-content !important;
-  overflow: auto !important;
-  min-height: 100vh !important;
-  width: 100% !important;
-  position: relative !important;
-}
-
-@-moz-document url-prefix(about:), url-prefix(chrome:), url-prefix(moz-) {
+@-moz-document url-prefix(about:) {
+  /* This makes sure that some firefox pages don't have weird blocks */
   :root {
-    /* allow browser uis to be smallers than viewport size */
-    min-height: 100% !important;
+    --in-content-page-background: transparent !important; 
   }
-  :root>* {
-    background: rgba(36,16,26,.75) !important;
-    min-height: 100% !important;
-  }
-  .logo-and-wordmark {
-    display: none !important;	
-  }
-  .search-handoff-button {
-    background: rgba(0, 0, 0, .5) !important;
-  }
+}
+
+body {
+  /* Adds a default background on most pages */
+  background: rgba(40, 42, 54, 0.7) !important;
+
+  /* Make sure it always covers the entire screen */
+  min-height: 100vh !important;
+  min-width: 100vh !important;
+  margin: 0 !important;
 }
