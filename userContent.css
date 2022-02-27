@@ -13,6 +13,10 @@
   }
 }
 
+@-moz-document media-document(image) {
+
+}
+
 body {
   /* Adds a default background on most pages */
   background: rgba(40, 42, 54, 0.7) !important;
@@ -20,5 +24,5 @@ body {
   /* Make sure it always covers the entire screen */
   min-height: 100vh;
   min-width: 100vw;
-  margin: 0;
+  margin: 0 !important;
 }
