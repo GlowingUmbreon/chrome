@@ -19,7 +19,7 @@
 
 body {
   /* Adds a default background on most pages */
-  background: rgba(40, 42, 54, 0.7) !important;
+  background: rgba(40, 42, 54, 0.8) !important;
 
   /* Make sure it always covers the entire screen */
   min-height: 100vh;
